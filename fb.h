@@ -27,6 +27,7 @@ class canvas{
         void fb_rectangle(int x0, int y0, int x1, int y1, int t, rgb c);
         void fb_circle(double r, double xi, double yi, rgb c);
         void fb_pset(int x, int y, rgb c);
+        void fb_pset(Point p, rgb c){fb_pset(p.getX(), p.getY(), c);}
         void fb_reset();
         void fb_putchar(char c);
         void fb_printf(std::string c);

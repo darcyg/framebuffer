@@ -12,23 +12,8 @@ BLUE	color.cpp	/^void rgb::BLUE()$/;"	f	class:rgb	signature:()
 BLUE	color.h	/^        void BLUE();$/;"	p	class:rgb	access:public	signature:()
 BROWN	color.cpp	/^void rgb::BROWN()$/;"	f	class:rgb	signature:()
 BROWN	color.h	/^        void BROWN();       \/\/165,42,42$/;"	p	class:rgb	access:public	signature:()
-Battery	battery.cpp	/^class Battery$/;"	c	file:
-Battery::hours	battery.cpp	/^    std::string hours(double val);$/;"	p	class:Battery	file:	access:public	signature:(double val)
-Battery::hours	battery.cpp	/^std::string Battery::hours(double val)$/;"	f	class:Battery	signature:(double val)
-Battery::lastFullCapacity	battery.cpp	/^    double lastFullCapacity(){return m_lastFullCapacity;}$/;"	f	class:Battery	access:public	signature:()
-Battery::m_lastFullCapacity	battery.cpp	/^    double m_lastFullCapacity;$/;"	m	class:Battery	file:	access:private
-Battery::m_presentRate	battery.cpp	/^    double m_presentRate;$/;"	m	class:Battery	file:	access:private
-Battery::m_remainingCapacity	battery.cpp	/^    double m_remainingCapacity;$/;"	m	class:Battery	file:	access:private
-Battery::presentRate	battery.cpp	/^    double presentRate(){return m_presentRate;}$/;"	f	class:Battery	access:public	signature:()
-Battery::readFile	battery.cpp	/^    void readFile(std::vector<std::string> &FileContent, std::string FilePath);$/;"	p	class:Battery	file:	access:private	signature:(std::vector<std::string> &FileContent, std::string FilePath)
-Battery::readFile	battery.cpp	/^void Battery::readFile(std::vector<std::string> &FileContent, std::string FilePath)$/;"	f	class:Battery	signature:(std::vector<std::string> &FileContent, std::string FilePath)
-Battery::readInfo	battery.cpp	/^    void readInfo();$/;"	p	class:Battery	file:	access:public	signature:()
-Battery::readState	battery.cpp	/^    void readState();$/;"	p	class:Battery	file:	access:public	signature:()
-Battery::readState	battery.cpp	/^void Battery::readState()$/;"	f	class:Battery	signature:()
-Battery::remainingCapacity	battery.cpp	/^    double remainingCapacity(){return m_remainingCapacity;}$/;"	f	class:Battery	access:public	signature:()
-Battery::remainingTime	battery.cpp	/^    double remainingTime();$/;"	p	class:Battery	file:	access:public	signature:()
-Battery::remainingTime	battery.cpp	/^double Battery::remainingTime()$/;"	f	class:Battery	signature:()
 C	characters.h	/^        std::string C="0000000000"$/;"	m	class:character	access:public
+C	mouse.cpp	/^    canvas C;$/;"	v
 CHARACTERS_H	characters.h	2;"	d
 COLOR_H	color.h	2;"	d
 D	characters.h	/^        std::string D="0000000000"$/;"	m	class:character	access:public
@@ -98,7 +83,6 @@ Q	characters.h	/^        std::string Q="0000000000"$/;"	m	class:character	access
 R	characters.h	/^        std::string R="0000000000"$/;"	m	class:character	access:public
 RED	color.cpp	/^void rgb::RED()$/;"	f	class:rgb	signature:()
 RED	color.h	/^        void RED();$/;"	p	class:rgb	access:public	signature:()
-RED	mouse.c	/^    red.RED();$/;"	p	file:
 S	characters.h	/^        std::string S="0000000000"$/;"	m	class:character	access:public
 SEVEN	characters.h	/^        std::string SEVEN="0000000000"$/;"	m	class:character	access:public
 SIX	characters.h	/^        std::string SIX="0000000000"$/;"	m	class:character	access:public
@@ -126,7 +110,6 @@ background	fb.h	/^        rgb background;$/;"	m	class:canvas	access:public
 blank	characters.h	/^        std::string blank="0000000000"$/;"	m	class:character	access:public
 blue	color.h	/^        char blue(){return m_blue;}$/;"	f	class:rgb	access:public	signature:()
 blue	color.h	/^        void blue(char b){m_blue=b;}$/;"	f	class:rgb	access:public	signature:(char b)
-c	mouse.c	/^    canvas c;$/;"	v
 canvas	fb.cpp	/^canvas::canvas(){$/;"	f	class:canvas	signature:()
 canvas	fb.h	/^        canvas();$/;"	p	class:canvas	access:public	signature:()
 canvas	fb.h	/^class canvas{$/;"	c
@@ -146,6 +129,7 @@ canvas::fb_paint	fb.h	/^        void fb_paint();$/;"	p	class:canvas	access:publi
 canvas::fb_printf	fb.cpp	/^void canvas::fb_printf(std::string c)$/;"	f	class:canvas	signature:(std::string c)
 canvas::fb_printf	fb.h	/^        void fb_printf(std::string c);$/;"	p	class:canvas	access:public	signature:(std::string c)
 canvas::fb_pset	fb.cpp	/^void canvas::fb_pset(int x, int y, rgb c)$/;"	f	class:canvas	signature:(int x, int y, rgb c)
+canvas::fb_pset	fb.h	/^        void fb_pset(Point p, rgb c){fb_pset(p.getX(), p.getY(), c);}$/;"	f	class:canvas	access:public	signature:(Point p, rgb c)
 canvas::fb_pset	fb.h	/^        void fb_pset(int x, int y, rgb c);$/;"	p	class:canvas	access:public	signature:(int x, int y, rgb c)
 canvas::fb_putchar	fb.cpp	/^void canvas::fb_putchar(char c)$/;"	f	class:canvas	signature:(char c)
 canvas::fb_putchar	fb.h	/^        void fb_putchar(char c);$/;"	p	class:canvas	access:public	signature:(char c)
@@ -214,14 +198,13 @@ fb_hline	fb.cpp	/^void canvas::fb_hline(int x1, int y1, int t, int l, rgb c)$/;"
 fb_hline	fb.h	/^        void fb_hline(int x1, int y1, int t, int l, rgb c);$/;"	p	class:canvas	access:public	signature:(int x1, int y1, int t, int l, rgb c)
 fb_init	fb.cpp	/^void canvas::fb_init(){$/;"	f	class:canvas	signature:()
 fb_init	fb.h	/^        void fb_init();$/;"	p	class:canvas	access:public	signature:()
-fb_init	mouse.c	/^    c.fb_init();$/;"	p	file:
 fb_paint	fb.cpp	/^void canvas::canvas::fb_paint(){$/;"	f	class:canvas::canvas	signature:()
 fb_paint	fb.h	/^        void fb_paint();$/;"	p	class:canvas	access:public	signature:()
 fb_printf	fb.cpp	/^void canvas::fb_printf(std::string c)$/;"	f	class:canvas	signature:(std::string c)
 fb_printf	fb.h	/^        void fb_printf(std::string c);$/;"	p	class:canvas	access:public	signature:(std::string c)
 fb_pset	fb.cpp	/^void canvas::fb_pset(int x, int y, rgb c)$/;"	f	class:canvas	signature:(int x, int y, rgb c)
+fb_pset	fb.h	/^        void fb_pset(Point p, rgb c){fb_pset(p.getX(), p.getY(), c);}$/;"	f	class:canvas	access:public	signature:(Point p, rgb c)
 fb_pset	fb.h	/^        void fb_pset(int x, int y, rgb c);$/;"	p	class:canvas	access:public	signature:(int x, int y, rgb c)
-fb_pset	mouse.c	/^    c.fb_pset(xpos,y, red);$/;"	p	file:
 fb_putchar	fb.cpp	/^void canvas::fb_putchar(char c)$/;"	f	class:canvas	signature:(char c)
 fb_putchar	fb.h	/^        void fb_putchar(char c);$/;"	p	class:canvas	access:public	signature:(char c)
 fb_rectangle	fb.cpp	/^void canvas::fb_rectangle(int x0, int y0, int x1, int y1, int t, rgb c)$/;"	f	class:canvas	signature:(int x0, int y0, int x1, int y1, int t, rgb c)
@@ -240,44 +223,29 @@ getY	Point.cpp	/^int Point::getY(){ return m_y; }$/;"	f	class:Point	signature:()
 getY	Point.h	/^        int getY();$/;"	p	class:Point	access:public	signature:()
 green	color.h	/^        char green(){return m_green;}$/;"	f	class:rgb	access:public	signature:()
 green	color.h	/^        void green(char g){m_green=g;}$/;"	f	class:rgb	access:public	signature:(char g)
-hours	battery.cpp	/^    std::string hours(double val);$/;"	p	class:Battery	file:	access:public	signature:(double val)
-hours	battery.cpp	/^std::string Battery::hours(double val)$/;"	f	class:Battery	signature:(double val)
-lastFullCapacity	battery.cpp	/^    double lastFullCapacity(){return m_lastFullCapacity;}$/;"	f	class:Battery	access:public	signature:()
 location	fb.h	/^        int location;     \/* iterate to location *\/$/;"	m	class:canvas	access:public
 m_blue	color.h	/^        char m_blue;$/;"	m	class:rgb	access:private
 m_color	Point.h	/^        rgb m_color;$/;"	m	class:Point	access:private
 m_green	color.h	/^        char m_green;$/;"	m	class:rgb	access:private
-m_lastFullCapacity	battery.cpp	/^    double m_lastFullCapacity;$/;"	m	class:Battery	file:	access:private
-m_presentRate	battery.cpp	/^    double m_presentRate;$/;"	m	class:Battery	file:	access:private
 m_red	color.h	/^        char m_red;$/;"	m	class:rgb	access:private
-m_remainingCapacity	battery.cpp	/^    double m_remainingCapacity;$/;"	m	class:Battery	file:	access:private
 m_x	Point.h	/^        int m_x;$/;"	m	class:Point	access:private
 m_y	Point.h	/^        int m_y;$/;"	m	class:Point	access:private
-main	battery.cpp	/^int main(void)$/;"	f	signature:(void)
-main	mouse.c	/^int main()$/;"	f
-main	power.cpp	/^int main(void)$/;"	f	signature:(void)
-main	split.cpp	/^int main(void)$/;"	f	signature:(void)
-main	test_Point.cpp	/^int main(void){$/;"	f	signature:(void)
+main	mouse.cpp	/^int main()$/;"	f	signature:()
+main	test_DrawCircle.cpp	/^int main(void)$/;"	f	signature:(void)
 main	test_canvas.cpp	/^int main(void)$/;"	f	signature:(void)
 main	test_color.cpp	/^int main(void){$/;"	f	signature:(void)
+main	test_drawPoints.cpp	/^int main(void)$/;"	f	signature:(void)
+main	test_drawRectangle.cpp	/^int main(void)$/;"	f	signature:(void)
+main	test_drawText.cpp	/^int main(void)$/;"	f	signature:(void)
 main	testing.cpp	/^int main(void)$/;"	f	signature:(void)
 moveX	Point.cpp	/^void Point::moveX(int in_x){ m_x+=in_x; }$/;"	f	class:Point	signature:(int in_x)
 moveX	Point.h	/^        void moveX(int in_x);$/;"	p	class:Point	access:public	signature:(int in_x)
 moveY	Point.cpp	/^void Point::moveY(int in_y){ m_y+=in_y; }$/;"	f	class:Point	signature:(int in_y)
 moveY	Point.h	/^        void moveY(int in_y);$/;"	p	class:Point	access:public	signature:(int in_y)
-my_handler	mouse.c	/^int my_handler(Gpm_Event *event, void *data)$/;"	f	signature:(Gpm_Event *event, void *data)
-presentRate	battery.cpp	/^    double presentRate(){return m_presentRate;}$/;"	f	class:Battery	access:public	signature:()
-readFile	battery.cpp	/^    void readFile(std::vector<std::string> &FileContent, std::string FilePath);$/;"	p	class:Battery	file:	access:private	signature:(std::vector<std::string> &FileContent, std::string FilePath)
-readFile	battery.cpp	/^void Battery::readFile(std::vector<std::string> &FileContent, std::string FilePath)$/;"	f	class:Battery	signature:(std::vector<std::string> &FileContent, std::string FilePath)
-readInfo	battery.cpp	/^    void readInfo();$/;"	p	class:Battery	file:	access:public	signature:()
-readState	battery.cpp	/^    void readState();$/;"	p	class:Battery	file:	access:public	signature:()
-readState	battery.cpp	/^void Battery::readState()$/;"	f	class:Battery	signature:()
+my_handler	mouse.cpp	/^int my_handler(Gpm_Event *event, void *data)$/;"	f	signature:(Gpm_Event *event, void *data)
 red	color.h	/^        char red(){return m_red;}$/;"	f	class:rgb	access:public	signature:()
 red	color.h	/^        void red(char r){m_red=r;}$/;"	f	class:rgb	access:public	signature:(char r)
-red	mouse.c	/^    rgb red;$/;"	v
-remainingCapacity	battery.cpp	/^    double remainingCapacity(){return m_remainingCapacity;}$/;"	f	class:Battery	access:public	signature:()
-remainingTime	battery.cpp	/^    double remainingTime();$/;"	p	class:Battery	file:	access:public	signature:()
-remainingTime	battery.cpp	/^double Battery::remainingTime()$/;"	f	class:Battery	signature:()
+red	mouse.cpp	/^    rgb red;$/;"	v
 rgb	color.h	/^        rgb():m_red(0), m_green(0), m_blue(0){}$/;"	f	class:rgb	access:public	signature:()
 rgb	color.h	/^        rgb(char r, char g, char b):m_red(r), m_green(g), m_blue(b){}$/;"	f	class:rgb	access:public	signature:(char r, char g, char b)
 rgb	color.h	/^class rgb{$/;"	c
@@ -334,5 +302,6 @@ toString	Point.h	/^        std::string toString();$/;"	p	class:Point	access:publ
 toString	color.cpp	/^std::string rgb::toString()$/;"	f	class:rgb	signature:()
 toString	color.h	/^        std::string toString();$/;"	p	class:rgb	access:public	signature:()
 vinfo	fb.h	/^        struct fb_var_screeninfo vinfo;$/;"	m	class:canvas	typeref:struct:canvas::fb_var_screeninfo	access:public
-xpos	mouse.c	/^    int xpos=0;$/;"	v
+xpos	mouse.cpp	/^    int xpos=0;$/;"	v
+ypos	mouse.cpp	/^    int ypos=0;$/;"	v
 ~canvas	fb.h	/^        ~canvas(){};$/;"	f	class:canvas	access:public	signature:()
